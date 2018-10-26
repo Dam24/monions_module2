@@ -1,7 +1,7 @@
 class ArrayList(object):
 
-    def __init__(self, lenght=10):
-        self.list = [0] * lenght
+    def __init__(self, length=10):
+        self.list = [0] * length
         self.elements = 0
 
     def append(self, value=None):
@@ -15,6 +15,21 @@ class ArrayList(object):
 
         self.list[self.elements] = value
         self.elements = self.elements + 1
+
+    def search(self, index=None, value=None):
+        if index:
+            return self.list[index]
+        index = 0
+        while index < len(self.list):
+            if self.list[index] == value:
+                return self.list[index]
+            index = index + 1
+
+        raise ValueError("Data not in list")
+
+
+    # def delete(self, index=None, value=None):
+
 
     #
 	# def __str__(self):
